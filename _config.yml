@@ -1,4 +1,13 @@
+# Site settings
 url: http://www.arminsadeghi.com
+title: arminsadeghi
 name: Armin Sadeghi
 description: Eyes of an Engineer
+github: [metadata]
+
+# Build settings
+markdown: kramdown
 theme: jekyll-theme-cayman
+excerpt_separator: <!--more-->
+plugins:
+  - jekyll-feed

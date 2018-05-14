@@ -13,9 +13,7 @@ categories:
 
 A content management system (CMS) is a computer software system that allows for easy content creation, collaboration, and management. Web content such as this very web site, or the myriad of other news and blog sites on the web are all supported by a CMS system. The chances are that you have already seen and used a CMS, and as I have just set one up for this site I thought it a fitting first subject.
 
-<!--break-->
-
-<!--break-->
+<!--more-->
 
 Using a CMS allows for the author (and, if desired, the site users) to create site content easily without having to author static web pages or use special tools. The site and content can be administered right from within the web browser. In addition the actual content is seperated from the visual representation, such that the visual elements can be altered seperately and consistently. This is usually achieved by placing the actual content into a database such as [MySQL](http://www.mysql.com/).
 

@@ -13,9 +13,7 @@ categories:
 
 November 4th, 2006 &#8211; I was driving across Montana before I actually realized what I was getting into&#8230; a seriously long drive. [Seattle](http://en.wikipedia.org/wiki/Seattle), the city of [Starbucks](http://www.starbucks.com/) coffee, is located in the northwest of America, roughly 2800 miles (4500 km) drive from [New York City](http://en.wikipedia.org/wiki/New_York_City). Wouldn&#8217;t it be great to drive all the way across the U.S of A? Coast to coast? Well.. that&#8217;s what I was thinking, and I had five days to get across.
 
-<!--break-->
-
-<!--break-->
+<!--more-->
 
 I have been working as a Software Engineer in Seattle for five years now. After having finished a particularly long project I decided it was time for a small vacation, and driving across the country was always on the list. So after a little packing and staring at maps, a couple of friends and I started the drive. Our goal was to make it to New York City in five days (when I had a return flight booked&#8230; no way I was driving back).
 

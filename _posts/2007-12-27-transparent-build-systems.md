@@ -13,6 +13,8 @@ categories:
 
 Whenever you deal with a software project, you deal with a build system. The method and process by which you turn your code into a product. This may involve many steps such as pre-processing, compiling, linking, moving files around, and signing among others. The trouble is that on some projects this system becomes an afterthought rather than a purposeful choice. Today I want to briefly talk about the benefits obtained from a good build system. 
 
+<!--more-->
+
 So why think seriously about a build system? Why not fire up Visual Studio, hit 'New Project', and just start coding? The simple answer is that you will eventually get stuck, and the last thing you want to get stuck with is a broken limiting build system that is difficult to decipher and extend. A good system will give you: 
 
   * A deterministic repeatable build. This will give you confidence that when you create a build it will actually work, the same way as on other machines, every time. No weird oddities or unexplainable results.

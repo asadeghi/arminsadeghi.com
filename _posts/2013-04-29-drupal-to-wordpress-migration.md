@@ -11,6 +11,8 @@ categories:
 ---
 Keeping up with security updates on Drupal is exhausting. Not because there are many updates, but because the update process is more time consuming than you would want for a simple blog. So as much as I like Drupal, it&#8217;s time I move this blog to WordPress (WP) and give that a go.
 
+<!--more-->
+
 So far so good. I Had WP up and running in minutes and my only concern was migration of content. There are some random scripts and also professional commercial solutions for this migration, but I wanted to stick with out-of-the-box options (that are free). So here is what I did:
 
   1. <span style="line-height: 14px;">Drupal has a great default front page RSS feed that it publishes to <strong><em>yoursite.com/rss.xml</em></strong>. So the first thing is to go into the <em>admin/content/rss-publishing</em> and change the settings to output as many pages as possible with <strong><em>Full</em></strong><em> <strong>Text</strong></em>. Then save down the rss.xml file for your site. This will give you an RSS file with all your basic posts.</span>

@@ -13,9 +13,7 @@ categories:
 
 If you want to set up a Flash video on your website, and you are using Linux, then this post is for you. I&#8217;ll cover the steps one by one. Keep in mind that there are many different solutions and I have only documented one.
 
-<!--break-->
-
-<!--break-->
+<!--more-->
 
 **1. Istanbul Desktop Session Recorder**
   

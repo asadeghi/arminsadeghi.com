@@ -17,9 +17,7 @@ So before you go and start adding the two hundred files one by one using clearto
 
 `clearfsimport -nsetevent -recurse c:\tmp\srcfolder\new c:\views\destination_view_folder\srcfolder` 
 
-<!--break-->
-
-<!--break-->
+<!--more-->
 
 The catch is that the files must initially be stored somewhere outside your view, which is unlike other source control systems. With clearfsimport you have the files elsewhere and then 'import' them into your view. Clearfsimport also supports a '-preview' switch to tell you what it plans to do without doing it.
 

@@ -13,9 +13,7 @@ categories:
 
 Why are we talking about [Component Object Model](http://en.wikipedia.org/wiki/Component_Object_Model) (COM), isn't that old dead technology? Well&#8230; no. There are still so many COM objects in use today, in many projects, that you will run into them sooner or later. As a software engineer you might even have to resolve bugs in these components. Today I want to draw attention to ref counting bugs that can creep in when using aggregation within these objects. 
 
-<!--break-->
-
-<!--break-->
+<!--more-->
 
 COM objects use reference counting to control their lifetime. This is achieved through the implementation of an _IUnknown_ interface by each and every object. This interface contains (quick &#8211; what are the first three v-table entries?) _IUnknown::QueryInterface_, _IUnknown::AddRef_ and _IUnknown::Release_. So after you add a reference to an object with _AddRef_, you are expected to call _Release_ when you are finished. Reference counting bugs can crop up in object clients when someone forgets this rule and are usually a real pain to find. This difficulty can be compounded even further if the object itself messes up its implementation of _AddRef_. 
 

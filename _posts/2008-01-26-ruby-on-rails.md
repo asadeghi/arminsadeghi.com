@@ -13,6 +13,8 @@ categories:
 
 So have you played with Ruby or Rails yet? No? Well you might want to give it check it out. The Ruby language is very interesting and Rails, which is built with Ruby, is a very powerful web application development framework. 
 
+<!--more-->
+
 To get you started take a look at these sites:
   
 <http://www.rubyonrails.org/> &#8211; All about rails.

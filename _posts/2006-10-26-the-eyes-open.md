@@ -13,4 +13,5 @@ categories:
 
 Welcome to my web site! After much deliberation I have finally succumbed to the will of the Internet and decided to start my own personal/professional web site. This space will be dedicated to engineering related articles and info, specifically the software kind.
 
+<!--more-->
 <!-- google_ad_section_end -->

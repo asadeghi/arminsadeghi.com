@@ -11,11 +11,9 @@ categories:
 ---
 I regularly use [Subversion](http://subversion.tigris.org/) (version control system) along with the [Tortoise SVN](http://tortoisesvn.tigris.org/) shell client. I mostly stick to the command line tools, but its nice to have some shell integration occasionally. Tortoise SVN provides this integration well.
 
+<!--more-->
+
 Just recently however I noticed a runaway process called &#8220;TSVNCache.exe&#8221; using up a lot (in my case one whole processor) of CPU cycles. I saw this happen on both Windows XP and Vista. TSVNCache.exe is the Tortoise SVN process that is responsible for all those [icon overlays](http://tortoisesvn.net/node/138) in Explorer when you view your SVN repository. The process sits there and scans the status of your files and updates them with appropriate icons to indicate state (i.e. modified, added, etc). For some reason it started misbehaving on my machine and grinding everything to a halt (Tortoise SVN version 1.6.1).
-
-<!--break-->
-
-<!--break-->
 
 [<img class="alignnone size-full wp-image-43" src="http://www.arminsadeghi.com/wp-content/uploads/2009/04/tsvncache.jpg" alt="tsvncache" width="524" height="346" srcset="http://www.arminsadeghi.com/wp-content/uploads/2009/04/tsvncache.jpg 524w, http://www.arminsadeghi.com/wp-content/uploads/2009/04/tsvncache-300x198.jpg 300w" sizes="(max-width: 524px) 100vw, 524px" />](http://www.arminsadeghi.com/wp-content/uploads/2009/04/tsvncache.jpg)
 

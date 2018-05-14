@@ -13,6 +13,8 @@ categories:
 
 When software applications do what they are advertised to do users are happy (generally), but what if you want to do more? Thats where you generally start looking for some method to extend the application. Not every application will allow this, but Windows Live Messenger (WLM) is one that does (at least currently with version 8.0). How, you ask? By writing your very own Add-In with the Messenger Add-In API &#8230;
 
+<!--more-->
+
 WLM only offers this one API (Application Programming Interface), so it&#8217;s not like Microsoft Excel where you have a vast array to pick from (i.e. .NET APIs, C APIs, COM Automation, VBA and XLM). You do get to pick a language that supports .NET and then proceed with the following:
 
   1. Download and install the .Net 2.0 SDK . This is a minimum requirement. You can also use Visual Studio .NET 2005, or Visual Studio Express (which is a free download), both of which come with the .NET 2.0 SDK.

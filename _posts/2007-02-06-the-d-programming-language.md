@@ -13,6 +13,8 @@ categories:
 
 Is there really another single letter programming language? Yes, its called D . The D programming language comes from Walter Bright and Digital Mars. Its been around for a while, but with the recent v1.0 release its probably a good time to take a look.
 
+<!--more-->
+
 D is a systems programming language focused on taking the performance and power elements from C/C++ and combining them with the productivity of languages such as Ruby and Python. D compiles directly to native code and looks very much like C/C++. There is a good comparison of the language here.
 
 If you want to get started, the first thing is to download the compiler. Then write a little sample code:

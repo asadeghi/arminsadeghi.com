@@ -13,6 +13,8 @@ categories:
 
 Video output to an external monitor is easy right? Well it was on Windows XP, but with Xubuntu (8.04 Hardy Heron) running on an IBM Thinkpad T41 turned out to be a little trickier than hitting function-F7.
 
+<!--more-->
+
 Firstly hitting function-F7 doesn't do anything, even though all the other function buttons (keyboard light, screen brightness, etc) work fine. If you leave the external monitor plugged in, and reboot, you should see the port come to life. Next you run your favourite video player (like VLC) and notice that the video only appears on the laptops LCD display, and not on the external monitor. To solve this simply:
 
   1. sudo apt-get install xvattr

@@ -22,9 +22,7 @@ Everyone has their favorite code editor. Different editors suit different needs,
 
 The big difference between SlickEdit and Emacs is that SlickEdit is commercial software and Emacs is open source. If you are on a budget Emacs is a good solution and also lets you run the editor from a console (emacs -nw), which is handy.
 
-<!--break-->
-
-<!--break-->
+<!--more-->
 
 If you go down the Emacs road you will need a little configuration. Below is a minimal set of settings I often use. Pick and choose, and then place these in your .emacs file (in your home directory on Linux, or in your Application Data folder on Windows).
   

@@ -15,9 +15,7 @@ Power users love shells. Not the seafood kind, but the command line interface, c
 
 MS Windows based operating systems have been using cmd.exe as their shell for quite some time, until PowerShell came along. [Windows PowerShell](http://www.microsoft.com/windowsserver2003/technologies/management/powershell/default.mspx) currently has an RC2 release available for [download](http://www.microsoft.com/technet/scriptcenter/topics/msh/download.mspx). Whats so special about Windows PowerShell?.. where do I start? 🙂
 
-<!--break-->
-
-<!--break-->
+<!--more-->
 
 The biggest change is in the object pipeline. No longer do commands output text, now its all objects. So when you do something like:
   

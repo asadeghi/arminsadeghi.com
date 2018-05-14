@@ -15,9 +15,7 @@ Good memory management is essential for writing software applications that perfo
 
 This is such a large topic. Where should I start? &#8230; 
 
-<!--break-->
-
-<!--break-->
+<!--more-->
 
 Lets start with some definitions. [Manual memory management](http://en.wikipedia.org/wiki/Manual_memory_management) is when the programmer manually controls the lifetime of allocated memory by specifically allocating and freeing it in a deterministic fashion. Alternatively, automatic memory management tries to determine what memory is no longer used and frees it automatically instead of relying on the programmer to identify it. Automatic memory management is sometimes referred to as [Garbage Collection](http://en.wikipedia.org/wiki/Garbage_collection_%28computer_science%29) (GC), however "garbage" could be defined as anything, so the term is a little vague. GC often refers to tracing garbage collection, one form of automatic memory management. Reference counting is an alternative automatic memory management method (when you Release an object it isn't necessarily freed, it all depends on the reference count, so as a consumer you do not control memory deallocation). The choice here is mostly independent of programming language. There are some languages that support manual management (such as C, C++), others that support automatic management with tracing GCs (such as Java, and C#), and others still that support both (like [D](http://en.wikipedia.org/wiki/D_programming_language)). 
 
