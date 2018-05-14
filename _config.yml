@@ -1,6 +1,6 @@
 # Site settings
 url: http://www.arminsadeghi.com
-title: arminsadeghi
+title: Armin Sadeghi
 name: Armin Sadeghi
 description: Eyes of an Engineer
 github: [metadata]
@@ -9,5 +9,6 @@ github: [metadata]
 markdown: kramdown
 theme: jekyll-theme-cayman
 excerpt_separator: <!--more-->
+timezone: UTC
 plugins:
   - jekyll-feed
