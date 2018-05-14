@@ -25,26 +25,29 @@ Then you should check out the fifteen minute hands-on tutorial [here](http://try
 
 Ruby is a dynamic, duck-typed, programming language. Firstly take a look at this: 
 
-`class Dummy<br />
-end<br />
-` `<br />
-dummyA = Dummy.new<br />
-Dummy.send(:define_method, :hi) do<br />
-&nbsp; print "Hello world!\n"<br />
-end<br />
-` `<br />
-dummyA.hi<br />
-` 
+```
+class Dummy
+end
+
+dummyA = Dummy.new
+Dummy.send(:define_method, :hi) do
+  print "Hello world!\n"
+end
+
+dummyA.hi
+```
   
 **<font face="times new roman,times">~/ruby$ ruby dynamic.rb<br /> Hello world!</font>** 
 
 Here we have dynamically defined a method on **Deal** called **hi**. Pretty straight forward. Now combine this with method_missing, which is called when&#8230; you guessed it.. you call a method on a class that doesn't exist. 
 
-`class Dummy<br />
-&nbsp; def method_missing(m, *args)<br />
-&nbsp;&nbsp;&nbsp; puts("There&#39;s no method called #{m} here please try again.")<br />
-&nbsp; end<br />
-end`
+```
+class Dummy
+  def method_missing(m, *args)
+    puts("There&#39;s no method called #{m} here please try again.")
+  end
+end
+```
 
 So now we have a way of creating new methods dynamically, and also knowing what the user tried to call and being able to intercept those calls. So when the user does something like this: 
 

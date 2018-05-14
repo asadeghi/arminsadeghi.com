@@ -19,42 +19,42 @@ D is a systems programming language focused on taking the performance and power 
 
 If you want to get started, the first thing is to download the compiler. Then write a little sample code:
   
-`<br />
-	int main(char[][] args)<br />
-	{<br />
-	&nbsp;&nbsp;&nbsp; printf("hello world\n");<br />
-	&nbsp;&nbsp;&nbsp; printf("args.length = %d\n", args.length);<br />
-	&nbsp;&nbsp;&nbsp; for (int i = 0; i < args.length; i++)<br />
-	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; printf("args[%d] = &#39;%s&#39;\n", i, cast(char *)args[i]);<br />
-	&nbsp;&nbsp;&nbsp; return 0;<br />
-	}<br />
-` 
+```
+int main(char[][] args)
+{
+  printf("hello world\n");
+  printf("args.length = %d\n", args.length);
+  for (int i = 0; i < args.length; i++)
+    printf("args[%d] = &#39;%s&#39;\n", i, cast(char *)args[i]);
+  return 0;
+}
+```
   
 Looks very similar to C on first inspection, with a few twists. In addition D provides for a garbage collector, contract programming, resizeable arrays, built-in strings, an inline assembler, and much more.
 
 The built in strings are particularly useful. D introduces a new binary operator '~' for concatenation.
   
-`<br />
-const char[5] abc = "world";<br />
-char[] str = "hello" ~ abc;<br />
-` 
+```
+const char[5] abc = "world";
+char[] str = "hello" ~ abc;
+```
   
 With contract programming D gives you not only asserts, but also pre and post contracts to validate function behaviour:
   
-`<br />
-in<br />
-{<br />
-&nbsp;&nbsp;...contract preconditions...<br />
-}<br />
-out(result)<br />
-{<br />
-&nbsp;&nbsp;...contract postconditions...<br />
-}<br />
-body<br />
-{<br />
-&nbsp;&nbsp;...code...<br />
-}<br />
-` 
+```
+in
+{
+  ...contract preconditions...
+}
+out(result)
+{
+  ...contract postconditions...
+}
+body
+{
+  ...code...
+}
+```
   
 So contract programming, built-in strings, resizable arrays&#8230; these things are not terribly new. They can often be implemented with some discipled programming and perhaps some extra C++ modules. So does D bring something serious to the playing table? I vote yes. Just as C# and the .Net framework enable developers to code at a higher level and be more productive (in certain applications of course), D could provide similar benefits to the lower level systems programming area where C/C++ still dominate.
 

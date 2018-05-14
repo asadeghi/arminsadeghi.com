@@ -18,6 +18,9 @@
     </section>
 
     <section class="main-content">
+      <h2>{{ page.title }}</h2>
+      <small>Posted on {{ page.date | date_to_string }}</small>
+
       {{ content }}
 
       <footer class="site-footer">

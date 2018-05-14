@@ -23,9 +23,7 @@ Download [Istanbul](http://live.gnome.org/Istanbul) using &#8220;sudo apt-get in
   
 Download [FFmpeg](http://www.ffmpeg.org) and use it to convert the Ogg file to a Flash video file (.flv).
   
-`<br />
-ffmpeg -i input_file.ogg -f flv output_file.flv<br />
-` 
+`ffmpeg -i input_file.ogg -f flv output_file.flv` 
   
 **3. Flowplayer**
   
@@ -37,13 +35,13 @@ Now all you need is a Flash player to embed into your HTML page and play the Fla
 
 Also upload your flash video file (output_file.flv in our example) up to your website. Note that Flowplayer won&#8217;t run by default if you try and run it locally. Then just add the following into your HTML page:
   
-`<br />
-<script src="flowplayer-3.1.0.min.js"></script><br />
-<a href="output_file.flv" style="display:block;width:425px;height:300px;" id="player"></a><br />
-<script language="JavaScript"><br />
-flowplayer("player", "flowplayer-3.1.0.swf");<br />
-</script><br />
-` 
+```
+<script src="flowplayer-3.1.0.min.js"></script>
+<a href="output_file.flv" style="display:block;width:425px;height:300px;" id="player"></a>
+<script language="JavaScript">
+flowplayer("player", "flowplayer-3.1.0.swf");
+</script>
+```
   
 Note that the &#8220;player&#8221; parameter to flowplayer() must match the id value in the <a> tag. You can change the size around as much as you like.
 

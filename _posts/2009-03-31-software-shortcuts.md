@@ -16,27 +16,28 @@ How many times have you used your code editor to look for some text and either d
 <!--more-->
 
 One of the most useful is searching through files. In the windows world you should all know about **findstr**. In particular the following variation:
-  
-`<br />
-findstr /snip /c:"string to look for" *.cpp<br />
-` 
+
+```
+findstr /snip /c:"string to look for" *.cpp
+```
   
 This command will go through all sub directories, ignoring case, looking through all cpp files for the specified string. And it never lies. In the linux world you want to use something like this:
-  
-`<br />
-find . | xargs grep 'string to look for'<br />
-` 
+
+```
+find . | xargs grep 'string to look for'
+```
   
 If you find yourself repeating steps like this often, place the command in a script. Here is the one I use (it ignores SVN hidden folders and uses color output):
   
-`<br />
-#!/bin/bash<br />
-find . ! -path "*.svn*" | xargs grep "$1" --color=always<br />
-` 
+```
+#!/bin/bash
+find . ! -path "*.svn*" | xargs grep "$1" --color=always
+```
   
 You can perform all the above searching by using only grep as well:
   
-`<br />
+```
 grep 'string to look for' * --exclude-dir=".svn" -R --color=always`
+```
 
 <!-- google_ad_section_end -->

@@ -26,9 +26,8 @@ The big difference between SlickEdit and Emacs is that SlickEdit is commercial s
 
 If you go down the Emacs road you will need a little configuration. Below is a minimal set of settings I often use. Pick and choose, and then place these in your .emacs file (in your home directory on Linux, or in your Application Data folder on Windows).
   
-``
-
-<pre>;; ~/.emacs
+```
+;; ~/.emacs
 ;;
 
 (custom-set-variables
@@ -104,6 +103,6 @@ If you go down the Emacs road you will need a little configuration. Below is a m
  (autoload &#039;rubydb "rubydb3x" "Ruby debugger" t)
  ;; uncomment the next line if you want syntax highlighting                     
  (add-hook &#039;ruby-mode-hook &#039;turn-on-font-lock)
-</pre></p> 
+``` 
 
 <!-- google_ad_section_end -->

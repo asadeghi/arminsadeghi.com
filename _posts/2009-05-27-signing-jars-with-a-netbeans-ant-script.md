@@ -18,37 +18,37 @@ Firstly you should do some background reading. There is a great article at onjav
 Next you need to:
 
 **a)** Create the keystore with keytool.
-  
-`<br />
-keytool -genkey -alias -keyalg RSA -keystore -validity 365<br />
-` 
+
+```
+keytool -genkey -alias -keyalg RSA -keystore -validity 365
+```
   
 The keystore filename is usually a jks file, but you can call it anything. Remember the alias name you used for later. To check that the store is created correctly use the following command to view the contents:
   
-`<br />
-keytool -list -v -keystore<br />
-` 
+```
+keytool -list -v -keystore
+```
   
 **b)** Integrate jarsigner into your build system. If you developed your application in NetBeans 6.5 you will have a build.xml file in the root of your project. Add the following targets to build.xml:
   
-`<br />
-<target name="-post-jar" depends="signjar"><br />
-</target><br />
-` `<br />
-<target name="signjar" depends=""><br />
-<echo message="Signing ${dist.dir}/application.jar ..."/><br />
-<exec dir="${work.dir}" executable="jarsigner"><br />
-<arg value="-verbose" /><br />
-<arg value="-keystore" /><br />
-<arg value="keystore_file.jks" /><br />
-<arg value="-storepass" /><br />
-<arg value="store_password" /><br />
-<arg value="-keypass" /><br />
-<arg value="keypass" /><br />
-<arg value="application.jar" /><br />
-<arg value="alias_name" /><br />
-</exec><br />
-</target><br />
-` 
+```
+<target name="-post-jar" depends="signjar">
+</target>
+
+<target name="signjar" depends="">
+<echo message="Signing ${dist.dir}/application.jar ..."/>
+<exec dir="${work.dir}" executable="jarsigner">
+<arg value="-verbose" />
+<arg value="-keystore" />
+<arg value="keystore_file.jks" />
+<arg value="-storepass" />
+<arg value="store_password" />
+<arg value="-keypass" />
+<arg value="keypass" />
+<arg value="application.jar" />
+<arg value="alias_name" />
+</exec>
+</target>
+``` 
   
 That&#8217;s all folks. Next time I&#8217;ll discuss code obfuscation which can be integrated into build.xml as well.

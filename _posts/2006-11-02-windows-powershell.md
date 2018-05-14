@@ -19,9 +19,7 @@ MS Windows based operating systems have been using cmd.exe as their shell for 
 
 The biggest change is in the object pipeline. No longer do commands output text, now its all objects. So when you do something like:
   
-`<br />
-Get-Process | Format-Wide<br />
-` 
+`Get-Process | Format-Wide` 
   
 The output of _Get-Process_ is piped, as objects, to the next command. In this case _Format-Wide_ takes the objects and formats them in a particular way. You could have used _Format-List_, or a multitude of other variations. Passing objects allows much richer communication between functions in the command pipeline as well as other shell operations. So you can imagine what something like this may do:
 
@@ -39,15 +37,15 @@ and now you have navigated to HKEY\_LOCAL\_MACHINE\Software. Well what else can
 
 So what if you have a COM Automation object that you want to work with? Lets say you need to boot Excel, do a few calculations and retrieve the result? Prior to Windows PowerShell this was not trivial but now all you need is a few lines similar to this:
 
-`<br />
-$xl = New-Object -ComObject Excel.Application<br />
-$xl.Workbooks.Add()<br />
-$xl.Range("A1").Value2 = 5<br />
-$xl.Range("A2").Value2 = 6<br />
-$xl.Range("A3").Value2 = "=Sum(A1, A2)"<br />
-$output = $xl.Range("A3")<br />
-$xl.Quit()<br />
-` 
+```
+$xl = New-Object -ComObject Excel.Application
+$xl.Workbooks.Add()
+$xl.Range("A1").Value2 = 5
+$xl.Range("A2").Value2 = 6
+$xl.Range("A3").Value2 = "=Sum(A1, A2)"
+$output = $xl.Range("A3")
+$xl.Quit()
+```
   
 It looks very C# ish, but being able to run this straight from a command line script is just great.
 
