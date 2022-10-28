@@ -9,7 +9,6 @@ permalink: /windows-powershell/
 categories:
   - General
 ---
-<!-- google_ad_section_start -->
 
 Power users love shells. Not the seafood kind, but the command line interface, computer command scripting kind. Even MacOS which was traditionally GUI driven, now has a shell (albeit somewhat hidden), due to its makeover in OS X. With a shell the user can input text commands to manipulate the computer. The most obvious use of which is the ability to script common operations, or perform functions faster than perhaps the user-interface driven counterpart operation.
 
@@ -18,9 +17,9 @@ MS Windows based operating systems have been using cmd.exe as their shell for 
 <!--more-->
 
 The biggest change is in the object pipeline. No longer do commands output text, now its all objects. So when you do something like:
-  
-`Get-Process | Format-Wide` 
-  
+
+`Get-Process | Format-Wide`
+
 The output of _Get-Process_ is piped, as objects, to the next command. In this case _Format-Wide_ takes the objects and formats them in a particular way. You could have used _Format-List_, or a multitude of other variations. Passing objects allows much richer communication between functions in the command pipeline as well as other shell operations. So you can imagine what something like this may do:
 
 `Get-Process m* | dir`
@@ -33,7 +32,7 @@ I could go on for pages and pages about all the cool new things, but lets just c
 
 `cd HKLM:\Software`
 
-and now you have navigated to HKEY\_LOCAL\_MACHINE\Software. Well what else can you do? Just try "_Get-PSDrive_" to see a list of all the other mapped PowerShell drives you can navigate.
+and now you have navigated to HKEY_LOCAL_MACHINE\Software. Well what else can you do? Just try "_Get-PSDrive_" to see a list of all the other mapped PowerShell drives you can navigate.
 
 So what if you have a COM Automation object that you want to work with? Lets say you need to boot Excel, do a few calculations and retrieve the result? Prior to Windows PowerShell this was not trivial but now all you need is a few lines similar to this:
 
@@ -46,7 +45,7 @@ $xl.Range("A3").Value2 = "=Sum(A1, A2)"
 $output = $xl.Range("A3")
 $xl.Quit()
 ```
-  
-It looks very C# ish, but being able to run this straight from a command line script is just great.
+
+It looks similar to C#, but being able to run this straight from a command line script is just great.
 
 <!-- google_ad_section_end -->
