@@ -21,7 +21,7 @@ The drive took us through thirteen states &#8211; Washington, Idaho, Montana, Wy
 
 &nbsp;
 
-[<img class="alignnone size-full wp-image-51" alt="OLYMPUS DIGITAL CAMERA" src="http://www.arminsadeghi.com/wp-content/uploads/2006/11/OnTheRoad2.jpg" width="1075" height="807" srcset="http://www.arminsadeghi.com/wp-content/uploads/2006/11/OnTheRoad2.jpg 1075w, http://www.arminsadeghi.com/wp-content/uploads/2006/11/OnTheRoad2-300x225.jpg 300w, http://www.arminsadeghi.com/wp-content/uploads/2006/11/OnTheRoad2-1024x768.jpg 1024w, http://www.arminsadeghi.com/wp-content/uploads/2006/11/OnTheRoad2-624x468.jpg 624w" sizes="(max-width: 1075px) 100vw, 1075px" />](http://www.arminsadeghi.com/wp-content/uploads/2006/11/OnTheRoad2.jpg)
+[<img class="alignnone size-full wp-image-51" alt="OLYMPUS DIGITAL CAMERA" src="https://www.arminsadeghi.com/wp-content/uploads/2006/11/OnTheRoad2.jpg" width="1075" height="807" srcset="https://www.arminsadeghi.com/wp-content/uploads/2006/11/OnTheRoad2.jpg 1075w, https://www.arminsadeghi.com/wp-content/uploads/2006/11/OnTheRoad2-300x225.jpg 300w, https://www.arminsadeghi.com/wp-content/uploads/2006/11/OnTheRoad2-1024x768.jpg 1024w, https://www.arminsadeghi.com/wp-content/uploads/2006/11/OnTheRoad2-624x468.jpg 624w" sizes="(max-width: 1075px) 100vw, 1075px" />](https://www.arminsadeghi.com/wp-content/uploads/2006/11/OnTheRoad2.jpg)
 
 &nbsp;
 
