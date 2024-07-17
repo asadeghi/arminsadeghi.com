@@ -22,4 +22,22 @@ Or build and host on a local development server:
 npx @11ty/eleventy --serve
 ```
 
-Or you can run [debug mode](https://www.11ty.dev/docs/debugging/) to see all the internals.
+## Debug mode
+
+MacOS or Linux
+
+```
+DEBUG=Eleventy* npx @11ty/eleventy
+```
+
+cmd.exe
+
+```
+set DEBUG=Eleventy* & npx @11ty/eleventy
+```
+
+Powershell
+
+```
+$env:DEBUG="Eleventy*"; npx @11ty/eleventy
+```
