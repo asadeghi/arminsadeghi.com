@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Case-insensitive Autocomplete in Bash</title>
+		<meta name="description" content="How to setup case-insensitive autocomplete in Bash">
+
+		<link rel="icon" type="image/icon" href="/img/favicon.ico">
+		<link rel="alternate" href="/feed/feed.xml" type="application/atom+xml" title="Armin Sadeghi">
+		<link rel="alternate" href="/feed/feed.json" type="application/json" title="Armin Sadeghi">
+		
+		
+		<link rel="stylesheet" href="/bundle/e94CYIrzqJ.css">
+
+		<!-- Google tag (gtag.js) -->
+		<script async src="https://www.googletagmanager.com/gtag/js?id=G-116G218LY5"></script>
+		<script>
+			window.dataLayer = window.dataLayer || [];
+			function gtag(){dataLayer.push(arguments);}
+			gtag('js', new Date());
+
+			gtag('config', 'G-116G218LY5');
+		</script>
+	</head>
+	<body>
+		<a href="#skip" class="visually-hidden">Skip to main content</a>
+
+		<header>
+			<a href="/" class="home-link">Armin Sadeghi</a>
+			<nav>
+				<h2 class="visually-hidden">Top level navigation menu</h2>
+				<ul class="nav">
+					<li class="nav-item"><a href="/">Home</a></li>
+					<li class="nav-item"><a href="/blog/">Archive</a></li>
+					<li class="nav-item"><a href="/about/">About</a></li>
+				</ul>
+			</nav>
+		</header>
+
+		<main id="skip">
+			
+<h1>Case-insensitive Autocomplete in Bash</h1>
+
+<ul class="post-metadata">
+	<li><time datetime="2010-05-27">27 May 2010</time></li>
+	<li><a href="/tags/bash/" class="post-tag">bash</a></li>
+</ul>
+
+<p>I use auto complete on the command line all the time to avoid having to type the full name of a file. Love it. What I hate is how it’s case-sensitive in bash, so I can’t do <code>cd ~/desk</code> to go to the <code>~/Desktop</code> folder.</p>
+<p>The fix for this is to use the shell input options file <strong>.inputrc</strong></p>
+<p>Just set this one option and restart your shell:</p>
+<pre class="language-bash" tabindex="0"><code class="language-bash"><span class="token builtin class-name">echo</span> <span class="token string">'set completion-ignore-case On'</span> <span class="token operator">>></span> ~/.inputrc</code></pre>
+<p>If you happen to have a system wide inputrc settings (<code>/etc/inputrc</code>) and want it included then you should add the following to your .inputrc file:</p>
+<pre><code>$include /etc/inputrc
+</code></pre>
+
+<ul class="links-nextprev"><li>Previous: <a href="/blog/software-shortcuts">Software shortcuts</a></li>
+</ul>
+
+		</main>
+
+		<footer>
+			© 2024 Armin Sadeghi. All rights reserved.
+		</footer>
+
+		<!-- This page `/blog/case-insensitive-autocomplete-in-bash` was built on 2024-07-17T08:52:52.360Z -->
+	</body>
+</html>

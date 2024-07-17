@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Transparent build systems</title>
+		<meta name="description" content="Considerations when putting together a build system for your project">
+
+		<link rel="icon" type="image/icon" href="/img/favicon.ico">
+		<link rel="alternate" href="/feed/feed.xml" type="application/atom+xml" title="Armin Sadeghi">
+		<link rel="alternate" href="/feed/feed.json" type="application/json" title="Armin Sadeghi">
+		
+		
+		<link rel="stylesheet" href="/bundle/e94CYIrzqJ.css">
+
+		<!-- Google tag (gtag.js) -->
+		<script async src="https://www.googletagmanager.com/gtag/js?id=G-116G218LY5"></script>
+		<script>
+			window.dataLayer = window.dataLayer || [];
+			function gtag(){dataLayer.push(arguments);}
+			gtag('js', new Date());
+
+			gtag('config', 'G-116G218LY5');
+		</script>
+	</head>
+	<body>
+		<a href="#skip" class="visually-hidden">Skip to main content</a>
+
+		<header>
+			<a href="/" class="home-link">Armin Sadeghi</a>
+			<nav>
+				<h2 class="visually-hidden">Top level navigation menu</h2>
+				<ul class="nav">
+					<li class="nav-item"><a href="/">Home</a></li>
+					<li class="nav-item"><a href="/blog/">Archive</a></li>
+					<li class="nav-item"><a href="/about/">About</a></li>
+				</ul>
+			</nav>
+		</header>
+
+		<main id="skip">
+			
+<h1>Transparent build systems</h1>
+
+<ul class="post-metadata">
+	<li><time datetime="2007-12-27">27 December 2007</time></li>
+	<li><a href="/tags/general/" class="post-tag">general</a></li>
+</ul>
+
+<p>Whenever you deal with a software project, you deal with a build system. The method and process by which you turn your code into a product. This may involve many steps such as pre-processing, compiling, linking, moving files around, and signing among others. The trouble is that on some projects this system becomes an afterthought rather than a purposeful choice. Today I want to briefly talk about the benefits obtained from a good build system.</p>
+<p>So why think seriously about a build system? Why not fire up Visual Studio, hit 'New Project', and just start coding? The simple answer is that you will eventually get stuck, and the last thing you want to get stuck with is a broken limiting build system that is difficult to decipher and extend. A good system will give you:</p>
+<ul>
+<li>A deterministic repeatable build. This will give you confidence that when you create a build it will actually work, the same way as on other machines, every time. No weird oddities or unexplainable results.</li>
+<li>Complete transparency over the build. Including every step, action, process, parameters and files involved, dependencies, and the control by which to alter any of the these.</li>
+</ul>
+<p>&quot;Why is this good? NMake and command lines are painful, should we not have more abstraction?&quot; you may ask. To a degree, yes, modern IDEs and some build tools make things easier, however they are generally designed to handle the common case, not anything complex. For example if your build involves building with different versions of a framework (such as a product targetting v1.1 and v2.0 of the .Net Framework), requiring input and output files in specific folders (seperating source files from generated ones is very helpful for both source control, tracking, and cleaning purposes), or being able to reproduce build steps individually for debugging.</p>
+<p>So what should you do? Its easy, just think about your requirements, the complexity of your project (both now and future), and ensure that you have enough transparency in the build system so that you can get what you need done as well as have the ability to view/fix/extend when necessary. In particular make sure:</p>
+<ul>
+<li>Build settings are stored somewhere easy to view.</li>
+<li>You have full control over where files are written to. The last thing you want is to have random temporary files generated all over your source tree (that you then, accidentally, check in to the depot).</li>
+<li>The build is deterministic. Deleting the output and rebuilding gives you the exact same thing every time.</li>
+<li>You have visibility into each step of the build, so that when something goes wrong you can see what caused it.</li>
+<li>You have control over the tools and dependencies used.</li>
+</ul>
+<p>Basically as much transparency over the process as you can get. Other than that - don't be afraid of make /nmake /rake (or whichever dependency build utility applies to your project) and a command line. They work great!</p>
+
+<ul class="links-nextprev"><li>Previous: <a href="/blog/manual-vs-automatic-memory-management">Manual vs automatic memory management</a></li><li>Next: <a href="/blog/software-shortcuts">Software shortcuts</a></li>
+</ul>
+
+		</main>
+
+		<footer>
+			© 2024 Armin Sadeghi. All rights reserved.
+		</footer>
+
+		<!-- This page `/blog/transparent-build-systems` was built on 2024-07-17T08:52:52.360Z -->
+	</body>
+</html>

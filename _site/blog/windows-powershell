@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Windows PowerShell</title>
+		<meta name="description" content="Introduction to Windows PowerShell">
+
+		<link rel="icon" type="image/icon" href="/img/favicon.ico">
+		<link rel="alternate" href="/feed/feed.xml" type="application/atom+xml" title="Armin Sadeghi">
+		<link rel="alternate" href="/feed/feed.json" type="application/json" title="Armin Sadeghi">
+		
+		
+		<link rel="stylesheet" href="/bundle/e94CYIrzqJ.css">
+
+		<!-- Google tag (gtag.js) -->
+		<script async src="https://www.googletagmanager.com/gtag/js?id=G-116G218LY5"></script>
+		<script>
+			window.dataLayer = window.dataLayer || [];
+			function gtag(){dataLayer.push(arguments);}
+			gtag('js', new Date());
+
+			gtag('config', 'G-116G218LY5');
+		</script>
+	</head>
+	<body>
+		<a href="#skip" class="visually-hidden">Skip to main content</a>
+
+		<header>
+			<a href="/" class="home-link">Armin Sadeghi</a>
+			<nav>
+				<h2 class="visually-hidden">Top level navigation menu</h2>
+				<ul class="nav">
+					<li class="nav-item"><a href="/">Home</a></li>
+					<li class="nav-item"><a href="/blog/">Archive</a></li>
+					<li class="nav-item"><a href="/about/">About</a></li>
+				</ul>
+			</nav>
+		</header>
+
+		<main id="skip">
+			
+<h1>Windows PowerShell</h1>
+
+<ul class="post-metadata">
+	<li><time datetime="2006-11-02">02 November 2006</time></li>
+	<li><a href="/tags/powershell/" class="post-tag">powershell</a></li>
+</ul>
+
+<p>Power users love shells. Not the seafood kind, but the command line interface, computer command scripting kind. Even MacOS which was traditionally GUI driven, now has a shell (albeit somewhat hidden), due to its makeover in OS X. With a shell the user can input text commands to manipulate the computer. The most obvious use of which is the ability to script common operations, or perform functions faster than perhaps the user-interface driven counterpart operation.</p>
+<p>MS Windows based operating systems have been using cmd.exe as their shell for quite some time, until PowerShell came along. <a href="http://www.microsoft.com/windowsserver2003/technologies/management/powershell/default.mspx">Windows PowerShell</a> currently has an RC2 release available for <a href="http://www.microsoft.com/technet/scriptcenter/topics/msh/download.mspx">download</a>. Whats so special about Windows PowerShell?.. where do I start? 🙂</p>
+<p>The biggest change is in the object pipeline. No longer do commands output text, now its all objects. So when you do something like:</p>
+<pre class="language-powershell" tabindex="0"><code class="language-powershell"><span class="token function">Get-Process</span> <span class="token punctuation">|</span> <span class="token function">Format-Wide</span></code></pre>
+<p>The output of <em>Get-Process</em> is piped, as objects, to the next command. In this case <em>Format-Wide</em> takes the objects and formats them in a particular way. You could have used <em>Format-List</em>, or a multitude of other variations. Passing objects allows much richer communication between functions in the command pipeline as well as other shell operations. So you can imagine what something like this may do:</p>
+<pre class="language-powershell" tabindex="0"><code class="language-powershell"><span class="token function">Get-Process</span> m* <span class="token punctuation">|</span> <span class="token function">dir</span></code></pre>
+<p>Yes you guessed it, it actually lists the folder location of all currently running processes that start with the letter m.</p>
+<p>Windows PowerShell also has a whole new syntax. Commands have verb-noun type names which provides for clear, consistent, and easily discoverable functionality (and if you are ever lost, just type &quot;<em>help</em>&quot;, or append &quot;<em>-?</em>&quot; to a command). To help people transition from other shells there are aliased commands, so commands such as &quot;cd&quot;, &quot;dir&quot;, &quot;more&quot; are aliased to their corresponding commands and work just fine.</p>
+<p>I could go on for pages and pages about all the cool new things, but lets just cover two more items, PowerShell drives, and COM object scripting (that I thought was very cool). Have you ever wanted to query the registry and manipulate it right from a script instead of messing with regedit and .reg files? Well try this out:</p>
+<pre class="language-powershell" tabindex="0"><code class="language-powershell">cd HKLM:\Software</code></pre>
+<p>and now you have navigated to <code>HKEY*LOCAL_MACHINE\Software</code>. Well what else can you do? Just try <code>\_Get-PSDrive*</code> to see a list of all the other mapped PowerShell drives you can navigate.</p>
+<p>So what if you have a COM Automation object that you want to work with? Lets say you need to boot Excel, do a few calculations and retrieve the result? Prior to Windows PowerShell this was not trivial but now all you need is a few lines similar to this:</p>
+<pre class="language-powershell" tabindex="0"><code class="language-powershell"><span class="token variable">$xl</span> = <span class="token function">New-Object</span> <span class="token operator">-</span>ComObject Excel<span class="token punctuation">.</span>Application
+<span class="token variable">$xl</span><span class="token punctuation">.</span>Workbooks<span class="token punctuation">.</span>Add<span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token variable">$xl</span><span class="token punctuation">.</span>Range<span class="token punctuation">(</span><span class="token string">"A1"</span><span class="token punctuation">)</span><span class="token punctuation">.</span>Value2 = 5
+<span class="token variable">$xl</span><span class="token punctuation">.</span>Range<span class="token punctuation">(</span><span class="token string">"A2"</span><span class="token punctuation">)</span><span class="token punctuation">.</span>Value2 = 6
+<span class="token variable">$xl</span><span class="token punctuation">.</span>Range<span class="token punctuation">(</span><span class="token string">"A3"</span><span class="token punctuation">)</span><span class="token punctuation">.</span>Value2 = <span class="token string">"=Sum(A1, A2)"</span>
+<span class="token variable">$output</span> = <span class="token variable">$xl</span><span class="token punctuation">.</span>Range<span class="token punctuation">(</span><span class="token string">"A3"</span><span class="token punctuation">)</span>
+<span class="token variable">$xl</span><span class="token punctuation">.</span>Quit<span class="token punctuation">(</span><span class="token punctuation">)</span></code></pre>
+<p>It looks similar to C#, but being able to run this straight from a command line script is just great.</p>
+
+<ul class="links-nextprev"><li>Next: <a href="/blog/com-aggregation-and-ref-counting-woes">COM aggregation and ref counting woes</a></li>
+</ul>
+
+		</main>
+
+		<footer>
+			© 2024 Armin Sadeghi. All rights reserved.
+		</footer>
+
+		<!-- This page `/blog/windows-powershell` was built on 2024-07-17T08:52:52.360Z -->
+	</body>
+</html>

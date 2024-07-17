@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Manual vs automatic memory management</title>
+		<meta name="description" content="Differences between manual and automatic memory management">
+
+		<link rel="icon" type="image/icon" href="/img/favicon.ico">
+		<link rel="alternate" href="/feed/feed.xml" type="application/atom+xml" title="Armin Sadeghi">
+		<link rel="alternate" href="/feed/feed.json" type="application/json" title="Armin Sadeghi">
+		
+		
+		<link rel="stylesheet" href="/bundle/e94CYIrzqJ.css">
+
+		<!-- Google tag (gtag.js) -->
+		<script async src="https://www.googletagmanager.com/gtag/js?id=G-116G218LY5"></script>
+		<script>
+			window.dataLayer = window.dataLayer || [];
+			function gtag(){dataLayer.push(arguments);}
+			gtag('js', new Date());
+
+			gtag('config', 'G-116G218LY5');
+		</script>
+	</head>
+	<body>
+		<a href="#skip" class="visually-hidden">Skip to main content</a>
+
+		<header>
+			<a href="/" class="home-link">Armin Sadeghi</a>
+			<nav>
+				<h2 class="visually-hidden">Top level navigation menu</h2>
+				<ul class="nav">
+					<li class="nav-item"><a href="/">Home</a></li>
+					<li class="nav-item"><a href="/blog/">Archive</a></li>
+					<li class="nav-item"><a href="/about/">About</a></li>
+				</ul>
+			</nav>
+		</header>
+
+		<main id="skip">
+			
+<h1>Manual vs automatic memory management</h1>
+
+<ul class="post-metadata">
+	<li><time datetime="2006-12-16">16 December 2006</time></li>
+	<li><a href="/tags/general/" class="post-tag">general</a></li>
+</ul>
+
+<p>Good memory management is essential for writing software applications that perform well. If the application takes too long to start or frustrates you as it completes operations, it doesn't make for a good experience. And there are many factors such as response time, working set, and hardware requirements to consider when dealing with performance. However memory management is a key ingredient, and deciding between manual and automatic systems can make a big difference.</p>
+<p>This is such a large topic. Where should I start? ...</p>
+<p>Lets start with some definitions. <a href="http://en.wikipedia.org/wiki/Manual_memory_management">Manual memory management</a> is when the programmer manually controls the lifetime of allocated memory by specifically allocating and freeing it in a deterministic fashion. Alternatively, automatic memory management tries to determine what memory is no longer used and frees it automatically instead of relying on the programmer to identify it. Automatic memory management is sometimes referred to as <a href="http://en.wikipedia.org/wiki/Garbage_collection_%28computer_science%29">Garbage Collection</a> (GC), however &quot;garbage&quot; could be defined as anything, so the term is a little vague. GC often refers to tracing garbage collection, one form of automatic memory management. Reference counting is an alternative automatic memory management method (when you Release an object it isn't necessarily freed, it all depends on the reference count, so as a consumer you do not control memory deallocation). The choice here is mostly independent of programming language. There are some languages that support manual management (such as C, C++), others that support automatic management with tracing GCs (such as Java, and C#), and others still that support both (like <a href="http://en.wikipedia.org/wiki/D_programming_language">D</a>).</p>
+<p>So which one is better? Well the truth is that it all depends. There are many pros and cons to each method (discussed at length on <a href="http://en.wikipedia.org/wiki/Memory_management">wikipedia</a>). In the end you have to pick the solution based on your specific requirements. However today lets talk about performance in particular. If you have some crazy high performance requirements (perhaps a real-time application), what do you do? ... you get more control.</p>
+<p>By using manual memory management you are gaining more control over when memory is allocated and deallocated, giving you, the developer, more control over how to deal with it. You can then be mindful of such things as memory locality, consumption in tight loops, and memory reuse, while avoiding indeterministic deallocation (tracing garbage collectors). You can still have enough control with automatic memory management if you stick with ref counting as a means to control memory/object lifetime. However there is a cost to be paid for these advantages, mostly in development difficulty - the more control you have, the more likely you are to make mistakes (mistakes here lead to memory leaks). And mistakes are bugs.. some bad, some really bad.</p>
+
+<ul class="links-nextprev"><li>Previous: <a href="/blog/com-aggregation-and-ref-counting-woes">COM aggregation and ref counting woes</a></li><li>Next: <a href="/blog/transparent-build-systems">Transparent build systems</a></li>
+</ul>
+
+		</main>
+
+		<footer>
+			© 2024 Armin Sadeghi. All rights reserved.
+		</footer>
+
+		<!-- This page `/blog/manual-vs-automatic-memory-management` was built on 2024-07-17T08:52:52.360Z -->
+	</body>
+</html>

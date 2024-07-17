@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>COM aggregation and ref counting woes</title>
+		<meta name="description" content="Dive into a COM aggregation bug">
+
+		<link rel="icon" type="image/icon" href="/img/favicon.ico">
+		<link rel="alternate" href="/feed/feed.xml" type="application/atom+xml" title="Armin Sadeghi">
+		<link rel="alternate" href="/feed/feed.json" type="application/json" title="Armin Sadeghi">
+		
+		
+		<link rel="stylesheet" href="/bundle/e94CYIrzqJ.css">
+
+		<!-- Google tag (gtag.js) -->
+		<script async src="https://www.googletagmanager.com/gtag/js?id=G-116G218LY5"></script>
+		<script>
+			window.dataLayer = window.dataLayer || [];
+			function gtag(){dataLayer.push(arguments);}
+			gtag('js', new Date());
+
+			gtag('config', 'G-116G218LY5');
+		</script>
+	</head>
+	<body>
+		<a href="#skip" class="visually-hidden">Skip to main content</a>
+
+		<header>
+			<a href="/" class="home-link">Armin Sadeghi</a>
+			<nav>
+				<h2 class="visually-hidden">Top level navigation menu</h2>
+				<ul class="nav">
+					<li class="nav-item"><a href="/">Home</a></li>
+					<li class="nav-item"><a href="/blog/">Archive</a></li>
+					<li class="nav-item"><a href="/about/">About</a></li>
+				</ul>
+			</nav>
+		</header>
+
+		<main id="skip">
+			
+<h1>COM aggregation and ref counting woes</h1>
+
+<ul class="post-metadata">
+	<li><time datetime="2006-11-24">24 November 2006</time></li>
+	<li><a href="/tags/general/" class="post-tag">general</a>, </li>
+	<li><a href="/tags/com/" class="post-tag">com</a></li>
+</ul>
+
+<p>Why are we talking about <a href="http://en.wikipedia.org/wiki/Component_Object_Model">Component Object Model</a> (COM), isn't that old dead technology? Well… no. There are still so many COM objects in use today, in many projects, that you will run into them sooner or later. As a software engineer you might even have to resolve bugs in these components. Today I want to draw attention to ref counting bugs that can creep in when using aggregation within these objects.</p>
+<p>COM objects use reference counting to control their lifetime. This is achieved through the implementation of an <code>_IUnknown_</code> interface by each and every object. This interface contains (quick – what are the first three v-table entries?) <code>_IUnknown::QueryInterface_</code>, <code>_IUnknown::AddRef_</code> and <code>_IUnknown::Release_</code>. So after you add a reference to an object with <code>_AddRef_</code>, you are expected to call <code>_Release_</code> when you are finished. Reference counting bugs can crop up in object clients when someone forgets this rule and are usually a real pain to find. This difficulty can be compounded even further if the object itself messes up its implementation of <code>_AddRef_</code>.</p>
+<p>The implementation of <code>_AddRef_</code> is typically simple (just increment an internal counter), however when the object aggregates other objects in its internal implementation (another form of object reuse as opposed to using containment) it becomes more complex. In these cases you have to ensure that AddRef and Release calls operate on the correct object.</p>
+<p>Lets take the example of a hypothetical AIRPLANE object. An AIRPLANE is implemented by aggregating WING, and ENGINE objects. WING implements <code>_IWing_</code> and <code>_IUnknown_</code>, ENGINE implements <code>_IEngine_</code> and <code>_IUnknown_</code>. Now clients of the AIRPLANE object would expect that <code>_IWing::AddRef_</code>, and <code>_IEngine::AddRef_</code> both control the lifetime of the outer object (the component/object doing the reusing – in this case AIRPLANE). This is fair and reasonable, however the only way this can happen is if the inner objects (WING and ENGINE) are aware of the outer object. So when WING and ENGINE are created, AIRPLANE passes a pointer to its <code>_IUnknown_</code> implementation (called the controlling unknown) down to the inner objects. If they support aggregation then they will use this pointer to handle any <code>_IUnknown_</code> calls that come in through <code>_IWing_</code> and <code>_IEngine_</code>. If they do not support aggregation they will return <code>CLASS*E_NOAGGREGATION</code> and fail creation. However ENGINE and WING must not delegate to the controlling unknown for any <code>_AddRef_</code> and <code>_Release_</code> calls that come in through <code>_IUnknown_</code> itself, as this is what the outer object will use to control their lifetime.</p>
+<p>These are just the basic rules of aggregation that when applied ensure that object lifetime is still managed correctly. Common problems arise when the inner objects forget to delegate the <code>_AddRef_</code> and <code>_Release_</code> calls to the controlling unknown, or do so in the wrong case (i.e. when called through <code>_IUnknown::AddRef_</code>). In this case the client of AIRPLANE may see what appears to be a ref counting bug on their side, but is actually an internal issue with the aggregation.</p>
+<p>No wonder people like managed code and .NET, ref counting bugs can get tricky!</p>
+
+<ul class="links-nextprev"><li>Previous: <a href="/blog/windows-powershell">Windows PowerShell</a></li><li>Next: <a href="/blog/manual-vs-automatic-memory-management">Manual vs automatic memory management</a></li>
+</ul>
+
+		</main>
+
+		<footer>
+			© 2024 Armin Sadeghi. All rights reserved.
+		</footer>
+
+		<!-- This page `/blog/com-aggregation-and-ref-counting-woes` was built on 2024-07-17T08:52:52.360Z -->
+	</body>
+</html>

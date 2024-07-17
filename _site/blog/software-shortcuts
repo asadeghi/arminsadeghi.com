@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Software shortcuts</title>
+		<meta name="description" content="Simple command line helpers to look through text files">
+
+		<link rel="icon" type="image/icon" href="/img/favicon.ico">
+		<link rel="alternate" href="/feed/feed.xml" type="application/atom+xml" title="Armin Sadeghi">
+		<link rel="alternate" href="/feed/feed.json" type="application/json" title="Armin Sadeghi">
+		
+		
+		<link rel="stylesheet" href="/bundle/e94CYIrzqJ.css">
+
+		<!-- Google tag (gtag.js) -->
+		<script async src="https://www.googletagmanager.com/gtag/js?id=G-116G218LY5"></script>
+		<script>
+			window.dataLayer = window.dataLayer || [];
+			function gtag(){dataLayer.push(arguments);}
+			gtag('js', new Date());
+
+			gtag('config', 'G-116G218LY5');
+		</script>
+	</head>
+	<body>
+		<a href="#skip" class="visually-hidden">Skip to main content</a>
+
+		<header>
+			<a href="/" class="home-link">Armin Sadeghi</a>
+			<nav>
+				<h2 class="visually-hidden">Top level navigation menu</h2>
+				<ul class="nav">
+					<li class="nav-item"><a href="/">Home</a></li>
+					<li class="nav-item"><a href="/blog/">Archive</a></li>
+					<li class="nav-item"><a href="/about/">About</a></li>
+				</ul>
+			</nav>
+		</header>
+
+		<main id="skip">
+			
+<h1>Software shortcuts</h1>
+
+<ul class="post-metadata">
+	<li><time datetime="2009-03-31">31 March 2009</time></li>
+	<li><a href="/tags/general/" class="post-tag">general</a></li>
+</ul>
+
+<p>How many times have you used your code editor to look for some text and either didn’t find what you were after, or worse yet – were told that it’s not there when in fact it was? I bet this has happened to us all at some stage, and after some struggle you master the editor and life goes on, however I want to go over some basic tools/commands that you can always fall back to.</p>
+<p>One of the most useful is searching through files. In the windows world you should all know about <strong>findstr</strong>. In particular the following variation:</p>
+<pre class="language-dos" tabindex="0"><code class="language-dos">findstr /snip /c:"string to look for" *.cpp</code></pre>
+<p>This command will go through all sub directories, ignoring case, looking through all cpp files for the specified string. And it never lies. In the linux world you want to use something like this:</p>
+<pre class="language-bash" tabindex="0"><code class="language-bash"><span class="token function">find</span> <span class="token builtin class-name">.</span> <span class="token operator">|</span> <span class="token function">xargs</span> <span class="token function">grep</span> <span class="token string">'string to look for'</span></code></pre>
+<p>If you find yourself repeating steps like this often, place the command in a script. Here is the one I use (it ignores SVN hidden folders and uses color output):</p>
+<pre class="language-bash" tabindex="0"><code class="language-bash"><span class="token shebang important">#!/bin/bash</span>
+<span class="token function">find</span> <span class="token builtin class-name">.</span> <span class="token operator">!</span> <span class="token parameter variable">-path</span> <span class="token string">"*.svn*"</span> <span class="token operator">|</span> <span class="token function">xargs</span> <span class="token function">grep</span> <span class="token string">"<span class="token variable">$1</span>"</span> <span class="token parameter variable">--color</span><span class="token operator">=</span>always</code></pre>
+<p>You can perform all the above searching by using only grep as well:</p>
+<pre class="language-bash" tabindex="0"><code class="language-bash"><span class="token function">grep</span> <span class="token string">'string to find'</span> * --exclude-dir<span class="token operator">=</span><span class="token string">".svn"</span> <span class="token parameter variable">-R</span> <span class="token parameter variable">--color</span><span class="token operator">=</span>always`</code></pre>
+
+<ul class="links-nextprev"><li>Previous: <a href="/blog/transparent-build-systems">Transparent build systems</a></li><li>Next: <a href="/blog/case-insensitive-autocomplete-in-bash">Case-insensitive Autocomplete in Bash</a></li>
+</ul>
+
+		</main>
+
+		<footer>
+			© 2024 Armin Sadeghi. All rights reserved.
+		</footer>
+
+		<!-- This page `/blog/software-shortcuts` was built on 2024-07-17T08:52:52.360Z -->
+	</body>
+</html>
