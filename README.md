@@ -1,6 +1,6 @@
 # arminsadeghi.com
 
-Personal blog built with the [Eleventy](https://www.11ty.dev/) site generator.
+Armin Sadeghi's personal blog. The original theme is based on [eleventy-base-blog v8](https://github.com/11ty/eleventy-base-blog): MIT license, Copyright (c) 2017–2023 Zach Leatherman @zachleat. All blog content is Copyright (c) 2024 Armin Sadeghi.
 
 ## Install dependencies
 
