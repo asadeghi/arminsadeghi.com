@@ -13,12 +13,15 @@
   --color-gray-50: #c0c0c0;
   --color-gray-90: #333;
 
+  --color-zink: #27272a;
+  --color-teal: #38b2ac;
+
   --background-color: #fff;
 
   --text-color: var(--color-gray-90);
   --text-color-link: #082840;
-  --text-color-link-active: #5f2b48;
-  --text-color-link-visited: #17050f;
+  --text-color-link-active: #38b2ac;
+  --text-color-link-visited: #082840;
 
   --syntax-tab-size: 2;
 }
@@ -32,7 +35,7 @@
     /* --text-color is assigned to --color-gray-_ above */
     --text-color-link: #1493fb;
     --text-color-link-active: #6969f7;
-    --text-color-link-visited: #a6a6f8;
+    --text-color-link-visited: #1493fb;
 
     --background-color: #15202b;
   }
@@ -73,11 +76,11 @@ p:last-child {
   margin-bottom: 0;
 }
 p {
-  line-height: 1.5;
+  line-height: 1.75rem;
 }
 
 li {
-  line-height: 1.5;
+  line-height: 1.5rem;
 }
 
 a[href] {
@@ -95,7 +98,7 @@ main {
   padding: 1rem;
 }
 main :first-child {
-  margin-top: 0;
+  margin-top: 1rem;
 }
 
 header {
@@ -283,4 +286,32 @@ h2 + .header-anchor {
 
 footer {
   color: var(--color-gray-50);
+  font-size: 0.9em;
+  margin-top: 1em;
+  margin-bottom: 1em;
+}
+
+.socials {
+  padding: 0;
+}
+.social-link {
+  list-style-type: none;
+}
+.social-link a {
+  text-decoration: none;
+}
+.social-link svg {
+  width: 24px;
+  height: 24px;
+  margin-right: 4px;
+  position: relative;
+  top: 0.3em;
+  fill: var(--text-color-link);
+}
+.social-link a[href]:hover svg {
+  fill: var(--text-color-link-active);
+}
+
+.avatar {
+  border-radius: 50%;
 }

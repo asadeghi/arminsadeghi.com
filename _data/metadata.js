@@ -6,6 +6,6 @@ module.exports = {
   author: {
     name: "Armin Sadeghi",
     email: "",
-    url: "https://arminsadeghi.com/about/",
+    url: "https://arminsadeghi.com/",
   },
 };
