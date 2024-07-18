@@ -2,7 +2,7 @@
 title: The Hidden Costs of Software Bloat - Compromising Security and Harming Our Planet
 description: A discussion on the hidden costs of bloated software
 date: 2024-05-17
-permalink: "/blog/hidden-costs-of-software-bloat"
+permalink: "/blog/hidden-costs-of-software-bloat/"
 tags:
   - general
 ---

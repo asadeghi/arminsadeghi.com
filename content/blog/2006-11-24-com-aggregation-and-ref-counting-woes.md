@@ -3,10 +3,10 @@ title: COM aggregation and ref counting woes
 description: Dive into a COM aggregation bug
 date: 2006-11-24
 guid: http://www.arminsadeghi.com/2006/11/com-aggregation-and-ref-counting-woes/
-permalink: "/blog/com-aggregation-and-ref-counting-woes"
+permalink: "/blog/com-aggregation-and-ref-counting-woes/"
 tags:
-    - general
-    - com
+  - general
+  - com
 ---
 
 Why are we talking about [Component Object Model](http://en.wikipedia.org/wiki/Component_Object_Model) (COM), isn't that old dead technology? Well&#8230; no. There are still so many COM objects in use today, in many projects, that you will run into them sooner or later. As a software engineer you might even have to resolve bugs in these components. Today I want to draw attention to ref counting bugs that can creep in when using aggregation within these objects.

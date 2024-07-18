@@ -3,9 +3,9 @@ title: Manual vs automatic memory management
 description: Differences between manual and automatic memory management
 date: 2006-12-16
 guid: http://www.arminsadeghi.com/2006/12/manual-vs-automatic-memory-management/
-permalink: "/blog/manual-vs-automatic-memory-management"
+permalink: "/blog/manual-vs-automatic-memory-management/"
 tags:
-    - general
+  - general
 ---
 
 Good memory management is essential for writing software applications that perform well. If the application takes too long to start or frustrates you as it completes operations, it doesn't make for a good experience. And there are many factors such as response time, working set, and hardware requirements to consider when dealing with performance. However memory management is a key ingredient, and deciding between manual and automatic systems can make a big difference.

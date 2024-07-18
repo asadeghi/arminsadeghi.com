@@ -3,7 +3,7 @@ title: Windows PowerShell
 description: Introduction to Windows PowerShell
 date: 2006-11-02
 guid: http://www.arminsadeghi.com/2006/11/windows-powershell/
-permalink: "/blog/windows-powershell"
+permalink: "/blog/windows-powershell/"
 tags:
   - powershell
 ---

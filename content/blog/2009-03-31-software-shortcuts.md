@@ -3,9 +3,9 @@ title: Software shortcuts
 description: Simple command line helpers to look through text files
 date: 2009-03-31
 guid: http://www.arminsadeghi.com/2009/03/software-shortcuts/
-permalink: "/blog/software-shortcuts"
+permalink: "/blog/software-shortcuts/"
 tags:
-    - general
+  - general
 ---
 
 How many times have you used your code editor to look for some text and either didn&#8217;t find what you were after, or worse yet &#8211; were told that it&#8217;s not there when in fact it was? I bet this has happened to us all at some stage, and after some struggle you master the editor and life goes on, however I want to go over some basic tools/commands that you can always fall back to.

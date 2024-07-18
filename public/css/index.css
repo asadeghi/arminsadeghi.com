@@ -14,13 +14,14 @@
   --color-gray-90: #333;
 
   --color-zink: #27272a;
-  --color-teal: #38b2ac;
+  --color-blue-300: #93c5fd;
+  --color-blue-500: #3b82f6;
 
   --background-color: #fff;
 
   --text-color: var(--color-gray-90);
   --text-color-link: #082840;
-  --text-color-link-active: #38b2ac;
+  --text-color-link-active: var(--color-blue-500); /* #38b2ac; */
   --text-color-link-visited: #082840;
 
   --syntax-tab-size: 2;
@@ -33,11 +34,11 @@
     --color-gray-90: #dad8d8;
 
     /* --text-color is assigned to --color-gray-_ above */
-    --text-color-link: #1493fb;
-    --text-color-link-active: #6969f7;
-    --text-color-link-visited: #1493fb;
+    --text-color-link: var(--color-blue-500);
+    --text-color-link-active: var(--color-blue-300);
+    --text-color-link-visited: var(--color-blue-500);
 
-    --background-color: #15202b;
+    --background-color: #27272a;
   }
 }
 
