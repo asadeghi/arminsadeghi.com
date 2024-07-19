@@ -20,7 +20,7 @@
 
   --text-color: var(--color-gray-90);
   --text-color-link: #082840;
-  --text-color-link-active: var(--color-blue-500); /* #38b2ac; */
+  --text-color-link-active: var(--color-blue-500);
   --text-color-link-visited: #082840;
 
   --syntax-tab-size: 2;
