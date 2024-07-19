@@ -11,6 +11,7 @@
 :root {
   --color-gray-20: #e0e0e0;
   --color-gray-50: #c0c0c0;
+  --color-gray-70: #666;
   --color-gray-90: #333;
 
   --color-blue-300: #93c5fd;
@@ -30,6 +31,7 @@
   :root {
     --color-gray-20: #e0e0e0;
     --color-gray-50: #c0c0c0;
+    --color-gray-70: #b7b3b3;
     --color-gray-90: #dad8d8;
 
     /* --text-color is assigned to --color-gray-_ above */
@@ -284,7 +286,7 @@ h2 + .header-anchor {
 }
 
 footer {
-  color: var(--color-gray-50);
+  color: var(--color-gray-70);
   font-size: 0.9em;
   padding: 1rem;
 }
