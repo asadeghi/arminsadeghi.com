@@ -1,24 +1,20 @@
 {
   "name": "arminsadeghi.com",
   "version": "2.1.0",
-  "main": "index.js",
   "scripts": {
     "build": "postcss styles.css -o docs/styles.css",
-    "start": "concurrently \"postcss styles.css -o docs/styles.css -w\" \"live-server docs --port=8080\""
+    "start": "concurrently \"npx postcss styles.css -o docs/styles.css -w --verbose\" \"npx http-server ./docs --port=3000\""
   },
-  "keywords": [],
   "author": {
     "name": "Armin Sadeghi",
     "url": "https://arminsadeghi.com/"
   },
-  "description": "Eyes of an engineer",
-  "dependencies": {
-  },
   "devDependencies": {
     "autoprefixer": "^10.4.20",
-    "live-server": "^1.2.0",
+    "concurrently": "^8.2.2",
+    "http-server": "^14.1.1",
+    "postcss": "^8.4.41",
     "postcss-cli": "^11.0.0",
-    "tailwindcss": "^3.4.7",
-    "concurrently": "^8.2.2"
+    "tailwindcss": "^3.4.7"
   }
 }
