@@ -1,0 +1,20 @@
+{
+  "name": "arminsadeghi.com",
+  "version": "2.1.1",
+  "scripts": {
+    "build": "postcss styles.css -o docs/styles.css",
+    "start": "concurrently \"npx postcss styles.css -o docs/styles.css -w --verbose\" \"npx http-server ./docs --port=3000\""
+  },
+  "author": {
+    "name": "Armin Sadeghi",
+    "url": "https://arminsadeghi.com/"
+  },
+  "devDependencies": {
+    "autoprefixer": "^10.4.20",
+    "concurrently": "^8.2.2",
+    "http-server": "^14.1.1",
+    "postcss": "^8.4.41",
+    "postcss-cli": "^11.0.0",
+    "tailwindcss": "^3.4.7"
+  }
+}
